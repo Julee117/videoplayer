@@ -1,6 +1,6 @@
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 100px;
   padding: 20px;
   color: white;
 }
@@ -10,6 +10,7 @@
   float: left;
 }
 
+/* SearchBar */
 .search-bar {
   text-align: center;
 }
