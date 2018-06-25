@@ -13,6 +13,15 @@ class App extends Component {
     }
   }
 
+  videoSearch(term) {
+    YTSearch({key: process.env.REACT_APP_API_KEY, term: term}, (videos) => {
+      this.setState({
+        videos: videos,
+        selectedVideo: videos[0]
+      });
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -20,7 +29,9 @@ class App extends Component {
           <h1 className="App-title">VideoPlayer</h1>
           <SearchBar />
         </header>
-        <VideoList />
+        <VideoList
+          onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+          videos={this.state.videos}/>
       </div>
     );
   }
