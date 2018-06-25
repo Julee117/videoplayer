@@ -9,7 +9,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      videos: []
+      videos: [],
+      selectedVideo: null
     }
   }
 
@@ -27,7 +28,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">VideoPlayer</h1>
-          <SearchBar />
+          <SearchBar onSearchTermChange={term => this.videoSearch(term)}/>
         </header>
         <VideoList
           onVideoSelect={selectedVideo => this.setState({selectedVideo})}
