@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SearchBar from "./containers/SearchBar";
 import YTSearch from 'youtube-api-search';
 import VideoList from "./components/VideoList";
+import VideoDetail from "./components/VideoDetail";
 import './App.css';
 
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
           <h1 className="App-title">VideoPlayer</h1>
           <SearchBar onSearchTermChange={term => this.videoSearch(term)}/>
         </header>
+        <VideoDetail video={this.state.videos[0]}/>
         <VideoList
           onVideoSelect={selectedVideo => this.setState({selectedVideo})}
           videos={this.state.videos}/>
